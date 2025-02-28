@@ -4,6 +4,7 @@ import './App.css'
 import HeaderContent from './Components/HeaderContent/HeaderContent'
 import BodyContent from './Components/BodyContent/BodyContent'
 import Login from './Components/Pages/Login/Login'
+import FooterContent from "./Components/FooterContent/FooterContent";
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         </BodyContent>
 
         <Login />
+
+        <FooterContent />
 
       </div>
       

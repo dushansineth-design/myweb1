@@ -9,7 +9,7 @@
     color: white;
   }
   
-  /* Dark Mode Toggle */
+  
   /* Dark Mode Toggle */
 .toggle-btn {
   position: fixed;
@@ -120,7 +120,7 @@
   }
   
   .search-bar button:hover {
-    background: #ff6a00;
+    background: #787674;
   }
   
   /* Section Title */
@@ -128,7 +128,7 @@
     text-align: center;
     margin: 40px 0;
     font-size: 1.8em;
-    color: #ff8c00;
+    color: #004e92;
   }
   
   /* Featured Products */

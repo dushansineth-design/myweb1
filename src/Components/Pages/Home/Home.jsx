@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { FaSearch, FaMoon, FaSun, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 
+
 function Home() {
   //const [count, setCount] = useState(0)
 
@@ -79,6 +80,8 @@ function Home() {
           ))}
         </motion.div>
       </BodyContent>
+      
+      
     </div>
     </>
   );
