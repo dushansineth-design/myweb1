@@ -1,0 +1,154 @@
+/* Scoped CSS for the Login Page */
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #000428, #004e92);
+  font-family: Arial, sans-serif;
+  /*background: url('../src/assets/pic4.jpg') no-repeat;*/
+  background-size: cover;
+  background-position: absolute;
+}
+
+/* Wrapp class for forms */
+.wrapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 400px;
+  height: auto;
+  margin-top: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Form Box Styling */
+.form-box {
+  position: absolute;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Transparent effect */
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Blur effect */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Hide login when register is active */
+.form-box.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Form Heading */
+.form-box h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Input Box Styling */
+.input-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  font-size: 18px;
+  outline: none;
+}
+
+.input-box input::placeholder {
+  color: #666;
+}
+
+.input-box .icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+}
+
+/* Remember and Forgot Password */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label {
+  color: #fff;
+}
+
+.remember-forgot a {
+  color: #00f2fe;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styling */
+form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #000428, #004e92);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #004e92, #000428);
+}
+
+/* Registration Link */
+.register-link p {
+  font-size: 14px;
+  color: #fff;
+  margin: 20px 0 15px;
+}
+
+.register-link a {
+  color: #00f2fe;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .wrapp {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .form-box {
+    width: 100%;
+  }
+}
