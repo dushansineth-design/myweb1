@@ -6,6 +6,15 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import { motion } from "framer-motion";
 import { FaSearch, FaMoon, FaSun, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import FooterContent from '../../FooterContent/FooterContent';
+import pic6 from '../../../assets/pic6.png';
+import pic8 from '../../../assets/pic8.png';
+import pic10 from '../../../assets/pic10.png';
+import pic11 from '../../../assets/pic11.png';
+import pic12 from '../../../assets/pic12.png';
+import pic13 from '../../../assets/pic13.png';
+import pic14 from '../../../assets/pic14.png';
+import pic15 from '../../../assets/pic15.png';
 
 
 
@@ -57,14 +66,14 @@ function Home() {
           transition={{ duration: 1 }}
         >
           {[
-            { img: "/assets/monitor.jpg", title: "Monitors", price: "$250" },
-            { img: "/assets/laptop.jpg", title: "Laptops", price: "$1200" },
-            { img: "/assets/cpu.jpg", title: "Processors", price: "$300" },
-            { img: "/assets/ram.jpg", title: "Memory (RAM)", price: "$80" },
-            { img: "/assets/motherboard.jpg", title: "Motherboards", price: "$150" },
-            { img: "/assets/powersupply.jpg", title: "Power Supply", price: "$90" },
-            { img: "/assets/storage.jpg", title: "Storages", price: "$100" },
-            { img: "/assets/keyboard.jpg", title: "Input Devices", price: "$50" },
+            { img: pic6, title: "Monitors" },
+            { img: pic8, title: "Laptops" },
+            { img: pic15, title: "Processors" },
+            { img: pic10, title: "Memory (RAM)" },
+            { img: pic11, title: "Motherboards" },
+            { img: pic12, title: "Power Supply" },
+            { img: pic13, title: "Storages" },
+            { img: pic14, title: "Input Devices" },
           ].map((item, index) => (
             <motion.div
               className="product-card"
@@ -81,7 +90,7 @@ function Home() {
         </motion.div>
       </BodyContent>
       
-      
+      <FooterContent />
     </div>
     </>
   );

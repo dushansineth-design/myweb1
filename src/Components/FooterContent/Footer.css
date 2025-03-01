@@ -1,9 +1,10 @@
 /* Footer Section */
 .footer {
-    background: linear-gradient(to right, #ff8c00, #ff6a00);
+    background: linear-gradient(to right, #000428, #004e92);
     color: white;
     padding: 40px 20px;
     text-align: center;
+    border-radius: 12px 12px 0px 0px;
     transition: background 0.5s ease-in-out;
   }
   

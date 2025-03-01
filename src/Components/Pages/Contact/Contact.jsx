@@ -3,6 +3,7 @@ import "../../../App.css";
 import HeaderContent from '../../HeaderContent/HeaderContent';
 import BodyContent from '../../BodyContent/BodyContent';
 import './Contact.css';
+import FooterContent from '../../FooterContent/FooterContent';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ function Contact() {
       <HeaderContent />
       <div className="contact-container">
         <BodyContent>
-          <h3>Contact Us</h3>
+          <h3 className='title'>Contact Us</h3>
           {submitted ? (
             <div className="thank-you-message">
               <h4>Thank you for contacting us!</h4>
@@ -74,7 +75,9 @@ function Contact() {
             </form>
           )}
         </BodyContent>
+        
       </div>
+      <FooterContent />
     </>
   )
 }

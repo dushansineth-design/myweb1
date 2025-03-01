@@ -120,7 +120,7 @@
   }
   
   .search-bar button:hover {
-    background: #787674;
+    background: #ff8c00;
   }
   
   /* Section Title */
@@ -129,6 +129,24 @@
     margin: 40px 0;
     font-size: 1.8em;
     color: #004e92;
+    animation: bounceIn 3s ease-in-out infinite;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(0%);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05) translateY(0);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
   
   /* Featured Products */
@@ -210,7 +228,7 @@
     display: inline-block;
     margin-top: 15px;
     padding: 12px 24px;
-    background: #ff8c00;
+    background: #004e92;
     color: white;
     font-weight: bold;
     border-radius: 8px;
@@ -225,7 +243,7 @@
   }
   
   .btn-primary:hover {
-    background: #ff6a00;
+    background: #777573;
   }
   
   .btn-secondary:hover {
