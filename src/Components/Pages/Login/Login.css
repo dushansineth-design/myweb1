@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #000428, #004e92);
+  /*background: linear-gradient(135deg, #000428, #004e92);*/
   font-family: Arial, sans-serif;
   /*background: url('../src/assets/pic4.jpg') no-repeat;*/
   background-size: cover;
@@ -36,6 +36,7 @@
   color: #fff;
   text-align: center;
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  animation: slideInUpFadeIn 1s ease-in-out;
 }
 
 /* Hide login when register is active */
@@ -98,7 +99,7 @@
 }
 
 .remember-forgot a {
-  color: #00f2fe;
+  color: /*#00f2fe*/ #ff8c00;
   text-decoration: none;
 }
 
@@ -132,7 +133,7 @@ button:hover {
 }
 
 .register-link a {
-  color: #00f2fe;
+  color: /*#00f2fe*/ #ff8c00;
   text-decoration: none;
   font-weight: bold;
 }
@@ -150,5 +151,38 @@ button:hover {
 
   .form-box {
     width: 100%;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

@@ -2,7 +2,7 @@
 .services-container {
     padding: 60px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #ffffff, #004e92);
+    /*background: linear-gradient(to bottom, #ffffff, #004e92);*/
     color: rgb(0, 0, 0);
   }
   
@@ -15,11 +15,13 @@
     font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #ffffff;
   }
   
   .services-description {
     font-size: 1.2em;
     margin-bottom: 30px;
+    color: #ffffff;
   }
   
   /* Services Grid */
@@ -33,7 +35,8 @@
   
   /* Service Card */
   .service-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -47,7 +50,7 @@
   }
 
   .stitle{
-    color: #004e92;
+    color: #048aff;
   }
   
   .service-icon {
@@ -63,6 +66,7 @@
   
   .service-card p {
     font-size: 1.1em;
+    color: #ffffff;
   }
   
   .service-card:hover {
