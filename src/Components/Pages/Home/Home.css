@@ -82,9 +82,12 @@
   .hero-section {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(to right, #000428, #004e92); /* Orange Gradient */
+    background: linear-gradient(to right, #000428, #004e92); 
     color: white;
     border-radius: 0px 0px 12px 12px;
+    margin-top: 0; /* Ensure no margin at the top */
+    position: relative;
+    top: 0; /* Ensure it starts at the top */
   }
   
   .hero-section h1 {

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #000;
+  background-color: #000428; /* Transparent background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -51,11 +51,11 @@
 }
 
 #header .menu-links a:hover {
-  background-color: #626363;
+  background-color: #626363; /* Transparent hover background */
   color: white;
 }
 
 #header .menu-links a.active {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Transparent active background */
   color: white;
 }
