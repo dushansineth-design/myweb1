@@ -11,7 +11,7 @@ function FooterContent() {
         {/* About Section */}
         <div className="footer-section">
           <h3>About Us</h3>
-          <p>XYZ Computer Shop provides high-quality laptops, desktops, and accessories at the best prices.</p>
+          <p>Prime Computer Shop provides high-quality laptops, desktops, and accessories at the best prices.</p>
         </div>
 
         {/* Quick Links */}
@@ -30,7 +30,7 @@ function FooterContent() {
           <h3>Contact Us</h3>
           <p><FaMapMarkerAlt /> 123 Tech Street, City, Country</p>
           <p><FaPhone /> +1 234 567 890</p>
-          <p><FaEnvelope /> support@xyzcomputers.com</p>
+          <p><FaEnvelope /> support@primecomputers.com</p>
         </div>
 
         {/* Social Media Links */}
@@ -47,7 +47,7 @@ function FooterContent() {
 
       {/* Copyright Section */}
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} XYZ Computer Shop. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Prime Computer Shop. All Rights Reserved.</p>
       </div>
     </footer>
   );
