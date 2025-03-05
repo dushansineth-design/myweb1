@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import "../../../App.css";
 import HeaderContent from '../../HeaderContent/HeaderContent';
 import BodyContent from '../../BodyContent/BodyContent';
@@ -23,7 +24,7 @@ function Home() {
 
   // Dark Mode Toggle State
   const [darkMode, setDarkMode] = useState(false);
-
+  const navigate = useNavigate(); // ✅ Hook for navigation
   
 
   return (
@@ -84,7 +85,11 @@ function Home() {
               <img src={item.img} alt={item.title} />
               <h3>{item.title}</h3>
               <p>{item.price}</p>
-              <Link to="/shop" className="btn-primary">Shop Now</Link>
+              {/*<Link to="/Shop" className="btn-primary">Shop Now</Link>*/}
+              {/* ✅ Button navigates to Shop page */}
+              <button className="btn-primary" onClick={() => navigate("/shop")}>
+                  Shop Now
+                </button>
             </motion.div>
           ))}
         </motion.div>

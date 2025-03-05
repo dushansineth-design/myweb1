@@ -7,6 +7,7 @@ import Contact from './Components/Pages/Contact/Contact.jsx'
 import About from './Components/Pages/About/About.jsx'
 import Login from './Components/Pages/Login/Login.jsx'
 import Home from './Components/Pages/Home/Home.jsx'
+import Shop from './Components/Shop/Shop.jsx'
 
 import {
   createBrowserRouter,
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+
+  {
+    path: "/shop", // ✅ Add the Shop page route
+    element: <Shop />,
   },
 ]);
 

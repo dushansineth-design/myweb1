@@ -1,0 +1,97 @@
+/* Shop Page */
+.shop-container {
+    padding: 0px;
+    text-align: center;
+    /*background: linear-gradient(to bottom, #ffffff, #ff8c00);*/
+    color: black;
+  }
+  
+  .dark-mode .shop-container {
+    background: linear-gradient(to bottom, #000000, #ff6a00);
+    color: white;
+  }
+  
+  .shop-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Shop Grid */
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Shop Card */
+  .shop-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .dark-mode .shop-card {
+    background: #222;
+    color: white;
+  }
+  
+  .shop-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .shop-card h3 {
+    color: #ff8c00;
+    margin-top: 10px;
+  }
+  
+  .shop-card p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .shop-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.5);
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #004e92;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background: #ff6a00;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .shop-title {
+      font-size: 2em;
+    }
+  
+    .shop-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  
+    .shop-card {
+      padding: 15px;
+    }
+  }
+  
