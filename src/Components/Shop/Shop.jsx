@@ -100,7 +100,12 @@ function Shop() {
               <img src={item.img} alt={item.title} />
               <h3>{item.title}</h3>
               <p>{item.price}</p>
-              <Link to="/cart" className="btn-primary">Add to Cart</Link>
+              <button 
+                className="btn-primary" 
+                onClick={() => addToCart(item)}
+              >
+                Add to Cart
+              </button>
             </motion.div>
           ))}
         </div>
