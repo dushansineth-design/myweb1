@@ -8,6 +8,7 @@ import FooterContent from "./Components/FooterContent/FooterContent";
 import Home from "./Components/Pages/Home/Home";  // ✅ Import Home Page
 import Shop from "./Components/Shop/Shop";  // ✅ Import Shop Page
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CartProvider } from './Components/CartContext/CartContext'; // ✅ Import CartProvider
 
 function App() {
 
