@@ -26,6 +26,9 @@ function Contact() {
     e.preventDefault();
     setMessage("");
     setLoading(true);
+
+    console.log("Sending data to backend:", formData); // Debugging log
+
     try {
       const response = await axios.post('http://localhost:3001/contact', formData, {
         headers: { "Content-Type": "application/json" },

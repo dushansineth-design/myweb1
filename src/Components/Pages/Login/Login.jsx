@@ -35,6 +35,12 @@ function Login() {
         } else {
           window.location.href = '/';
         }
+
+        // Store user data correctly
+        localStorage.setItem('user', JSON.stringify({
+        username: response.data.username, // Ensure server sends this
+        email: formData.email
+  }));
       }
     } catch (error) {
       setMessage(error.response?.data?.error || 'Something went wrong');
