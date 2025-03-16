@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../CartContext/CartContext';
 import { Link } from 'react-router-dom';
+import './Cart.css';
 
 const Cart = () => {
   const { 
@@ -29,9 +30,11 @@ const Cart = () => {
                 <img src={item.img} alt={item.title} />
                 <div className="item-details">
                   <h3>{item.title}</h3>
-                  <p>{item.price} x {item.quantity}</p>
+                  <p>${item.price.toFixed(2)} x {item.quantity}</p>
                   <button 
-                    onClick={() => removeFromCart(item.title)}
+                    onClick={() => {
+                      console.log(`Removing item: ${item.id}`); // Debugging log
+                      removeFromCart(item.id)}}
                     className="btn-remove"
                   >
                     Remove
@@ -43,9 +46,15 @@ const Cart = () => {
           <div className="cart-summary">
             <h2>Total: ${getCartTotal()}</h2>
             <div className="button-group">
-              <button onClick={clearCart} className="btn-secondary">
-                Clear Cart
-              </button>
+            <button 
+              onClick={() => {
+                console.log("Clearing cart..."); // Debugging log
+                clearCart();
+              }} 
+              className="btn-secondary"
+              >
+              Clear Cart
+            </button>
               <Link to="/checkout" className="btn-primary">
                 Checkout
               </Link>

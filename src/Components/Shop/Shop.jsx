@@ -6,14 +6,9 @@ import HeaderContent from "../HeaderContent/HeaderContent";
 import BodyContent from "../BodyContent/BodyContent";
 import FooterContent from "../FooterContent/FooterContent";
 import "./Shop.css";
-import pic6 from '../../assets/pic6.png';
-import pic8 from '../../assets/pic8.png';
-import pic10 from '../../assets/pic10.png';
-import pic11 from '../../assets/pic11.png';
-import pic12 from '../../assets/pic12.png';
-import pic13 from '../../assets/pic13.png';
-import pic14 from '../../assets/pic14.png';
-import pic15 from '../../assets/pic15.png';
+import { useCart } from "../CartContext/CartContext";
+
+
 
 import pic20 from '../../assets/pic20.png';
 import pic21 from '../../assets/pic21.png';
@@ -49,40 +44,61 @@ import pic50 from '../../assets/pic50.png';
 import pic51 from '../../assets/pic51.png';
 
 function Shop() {
+
+  const cartContext = useCart();
+  console.log("Cart Context:", cartContext); // Debug line
+
+  if (!cartContext) {
+    console.error("CartContext is undefined. Make sure <CartProvider> wraps <Shop />.");
+  }
+
+
+  //const addToCart = cartContext?.addToCart || (() => console.warn("addToCart is undefined"));
+
+  const { addToCart, cartItems } = useCart(); // Destructuring useCart()
+
+  //const [selectedItem, setSelectedItem] = useState(null);
+
   const products = [
-    { img: pic20, title: "MSI MAG 34' UWQHD", price: "$250" },
-    { img: pic21, title: "MSI MAG 27' WQHD", price: "$1200" },
-    { img: pic22, title: "MSI MAG WQHD", price: "$300" },
-    { img: pic23, title: "ViewSonic 22'", price: "$80" },
-    { img: pic24, title: "ASUS TUF", price: "$150" },
-    { img: pic25, title: "ASUS ROG STRIX", price: "$90" },
-    { img: pic26, title: "MSI PULS GL-66", price: "$100" },
-    { img: pic27, title: "ASUS Vivobook", price: "$50" },
-    { img: pic28, title: "AMD RYZEN 7", price: "$250" },
-    { img: pic29, title: "AMD RYZEN 9", price: "$1200" },
-    { img: pic30, title: "intel Core i7(10th GEN)", price: "$300" },
-    { img: pic31, title: "intel Core i9(12th GEN)", price: "$80" },
-    { img: pic32, title: "TRIDENTZ(RGB) - DDR5", price: "$150" },
-    { img: pic33, title: "VENGEANCE(RGB) - DDR5", price: "$90" },
-    { img: pic34, title: "TRIDENTZ(RGB) - DDR4", price: "$100" },
-    { img: pic35, title: "bread - DDR3", price: "$50" },
-    { img: pic36, title: "ASUS ROG STRIX X678", price: "$250" },
-    { img: pic37, title: "MSI X870", price: "$1200" },
-    { img: pic38, title: "ASUS ROG STRIX B780", price: "$300" },
-    { img: pic39, title: "GIGABYTE G450", price: "$80" },
-    { img: pic40, title: "Corsair RM1200x", price: "$150" },
-    { img: pic41, title: "ANTEC ATOM F750", price: "$90" },
-    { img: pic42, title: "SEOSONIC S12", price: "$100" },
-    { img: pic43, title: "SEOSONIC Vtex", price: "$50" },
-    { img: pic44, title: "Weston DIgital CAVIAR 1TB", price: "$250" },
-    { img: pic45, title: "TOSHIBA 2TB", price: "$1200" },
-    { img: pic46, title: "SAMSUNG 870", price: "$300" },
-    { img: pic47, title: "KINGSTON V960", price: "$80" },
-    { img: pic48, title: "Mouse", price: "$150" },
-    { img: pic49, title: "Keyboard", price: "$90" },
-    { img: pic50, title: "Playstation", price: "$100" },
-    { img: pic51, title: "Headphone,Headset", price: "$50" },
+    { img: pic20, title: "MSI MAG 34' UWQHD", price: 5000 },
+    { img: pic21, title: "MSI MAG 27' WQHD", price: 1200 },
+    { img: pic22, title: "MSI MAG WQHD", price: 300 },
+    { img: pic23, title: "ViewSonic 22'", price: 80 },
+    { img: pic24, title: "ASUS TUF", price: 150 },
+    { img: pic25, title: "ASUS ROG STRIX", price: 90 },
+    { img: pic26, title: "MSI PULS GL-66", price: 100 },
+    { img: pic27, title: "ASUS Vivobook", price: 50 },
+    { img: pic28, title: "AMD RYZEN 7", price: 250 },
+    { img: pic29, title: "AMD RYZEN 9", price: 1200 },
+    { img: pic30, title: "intel Core i7(10th GEN)", price: 300 },
+    { img: pic31, title: "intel Core i9(12th GEN)", price: 80 },
+    { img: pic32, title: "TRIDENTZ(RGB) - DDR5", price: 150 },
+    { img: pic33, title: "VENGEANCE(RGB) - DDR5", price: 90 },
+    { img: pic34, title: "TRIDENTZ(RGB) - DDR4", price: 100 },
+    { img: pic35, title: "bread - DDR3", price: 50 },
+    { img: pic36, title: "ASUS ROG STRIX X678", price: 250 },
+    { img: pic37, title: "MSI X870", price: 1200 },
+    { img: pic38, title: "ASUS ROG STRIX B780", price: 300 },
+    { img: pic39, title: "GIGABYTE G450", price: 80 },
+    { img: pic40, title: "Corsair RM1200x", price: 150 },
+    { img: pic41, title: "ANTEC ATOM F750", price: 90 },
+    { img: pic42, title: "SEOSONIC S12", price: 100 },
+    { img: pic43, title: "SEOSONIC Vtex", price: 50 },
+    { img: pic44, title: "Weston DIgital CAVIAR 1TB", price: 250 },
+    { img: pic45, title: "TOSHIBA 2TB", price: 1200 },
+    { img: pic46, title: "SAMSUNG 870", price: 300 },
+    { img: pic47, title: "KINGSTON V960", price: 80 },
+    { img: pic48, title: "Mouse", price: 150 },
+    { img: pic49, title: "Keyboard", price: 90 },
+    { img: pic50, title: "Playstation", price: 100 },
+    { img: pic51, title: "Headphone,Headset", price: 50 },
   ];
+
+  
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    setSelectedItem(item); // Set the item for preview
+  };
 
   return (
     <div className="shop-container">
@@ -99,7 +115,7 @@ function Shop() {
             >
               <img src={item.img} alt={item.title} />
               <h3>{item.title}</h3>
-              <p>{item.price}</p>
+              <p>${item.price}</p>
               <button 
                 className="btn-primary" 
                 onClick={() => addToCart(item)}
@@ -109,6 +125,19 @@ function Shop() {
             </motion.div>
           ))}
         </div>
+
+
+      {/* Debugging: Check cart items */}
+      <h2 className="item">Cart Items:</h2>
+        {cartItems.length > 0 ? (
+          <ul className="cart-items">
+            {cartItems.map((item, index) => (
+              <li key={index}>{item.title} - Quantity: {item.quantity}</li>
+            ))}
+          </ul>
+        ) : (
+          <p className="NoItem">No items in cart</p>
+        )}
       </BodyContent>
       <FooterContent />
     </div>

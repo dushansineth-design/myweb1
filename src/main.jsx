@@ -8,6 +8,7 @@ import About from './Components/Pages/About/About.jsx'
 import Login from './Components/Pages/Login/Login.jsx'
 import Home from './Components/Pages/Home/Home.jsx'
 import Shop from './Components/Shop/Shop.jsx'
+import { CartProvider } from './Components/CartContext/CartContext.jsx';
 
 import {
   createBrowserRouter,
@@ -16,40 +17,13 @@ import {
 
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-
-  {
-    path: "/home",
-    element: <Home />,
-  },
-
-  {
-    path: "/services",
-    element: <Services />,
-  },
-
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-
-  {
-    path: "/about",
-    element: <About />,
-  },
-
-  {
-    path: "/login",
-    element: <Login />,
-  },
-
-  {
-    path: "/shop", // ✅ Add the Shop page route
-    element: <Shop />,
-  },
+  { path: "/", element: <Home /> },
+  { path: "/home", element: <Home /> },
+  { path: "/services", element: <Services /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/about", element: <About /> },
+  { path: "/login", element: <Login /> },
+  { path: "/shop", element: <Shop /> }, 
 ]);
 
 
@@ -59,7 +33,9 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>  {/* ✅ Now CartProvider wraps RouterProvider */}
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>
 );
 
